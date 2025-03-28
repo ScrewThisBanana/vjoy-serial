@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Author>ScrewThisBanana</Author>
+    <Version>1.0.0.0</Version>
+    <License>MIT</License>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>true</SelfContained>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="vJoyInterfaceWrap">
+      <HintPath>..\SDK\c#\x64\vJoyInterfaceWrap.dll</HintPath>    
+    </Reference>  
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="..\SDK\c#\x64\vJoyInterface.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="microsoft.extensions.configuration.json" Version="9.0.3" />
+    <PackageReference Include="microsoft.extensions.hosting" Version="9.0.3" />
+    <PackageReference Include="microsoft.extensions.options.dataannotations" Version="9.0.3" />
+    <PackageReference Include="system.io.ports" Version="9.0.3" />
+  </ItemGroup>
+
+</Project>
